@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 }
 
 // Verificar si la solicitud es de tipo POST
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtener datos enviados por el cliente
     $data = json_decode(file_get_contents('php://input'), true);
 
