@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $comentario = $data['comentario'];
 
     // Crear una consulta SQL para insertar el comentario en la base de datos
-    $sql = "INSERT INTO Com_cenacer_ago_clase1(nombre, comentario) VALUES (?, ?)";
+    $sql = "INSERT INTO Com_cenacer_ago_clase1 (nombre, comentario) VALUES (?, ?)";
     $stmt = $conn->prepare($sql);
 
     if ($stmt === false) {
@@ -39,7 +39,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($stmt->execute() === true) {
         // El comentario se ha guardado correctamente
-        $response = ['mensaje' => 'Comentario creado con éxito'];
+        $response = ['mensaje' => 'Comentario llegó al endpoint, guardando en base de datos...'];
+
+        // Puedes agregar aquí código adicional para procesar la inserción en la base de datos
+
+        // Verificar si la inserción en la base de datos fue exitosa
+        if ($stmt->affected_rows > 0) {
+            $response['mensaje'] = 'Guardado'; // Éxito al guardar
+        } else {
+            $response['mensaje'] = 'No se guardó'; // Error al guardar
+        }
     } else {
         // Ha ocurrido un error al guardar el comentario
         $response = ['error' => 'Error al guardar el comentario en la base de datos: ' . $conn->error];
@@ -58,4 +67,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo json_encode(['error' => 'Método no permitido']);
 }
 ?>
-
