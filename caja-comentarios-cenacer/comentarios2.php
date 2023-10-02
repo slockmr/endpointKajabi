@@ -9,10 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comentario = $data["comentario"];
 
     // Conexión a la base de datos MySQL
-    $servername = "localhost";
-    $username = "id21302362_admin";
-    $password = "Cenacer1.";
-    $dbname = "id21302362_cursosagosto";
+    $servername = "sql9.freesqldatabase.com";
+    $username = "sql9650488";
+    $password = "tZz5v5KByk";
+    $dbname = "sql9650488";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Preparar la consulta SQL para insertar el comentario
-    $sql = "INSERT INTO Comentarios (nombre, comentario) VALUES (?, ?)";
+    $sql = "INSERT INTO Com_cenacer_ago_clase1 (nombre, comentario) VALUES (?, ?)";
     $stmt = $conn->prepare($sql);
 
     if ($stmt === false) {
