@@ -1,10 +1,17 @@
 <?php
+// Configurar cabeceras CORS para permitir acceso desde 'https://www.cenacermexico.com' y 'https://www.cenacermexico.com/grabaciones-evento-certificaciones'
+$allowedOrigins = [
+    'https://www.cenacermexico.com',
+    'https://www.cenacermexico.com/grabaciones-evento-certificaciones'
+];
 
-// Configurar cabeceras CORS
-header("Access-Control-Allow-Origin: https://www.cenacermexico.com");
-header("Access-Control-Allow-Origin: https://www.cenacermexico.com/grabaciones-evento-certificaciones");
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type");
+$origin = $_SERVER['HTTP_ORIGIN'];
+
+if (in_array($origin, $allowedOrigins)) {
+    header("Access-Control-Allow-Origin: $origin");
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type");
+}
 
 
 // Conexión a la base de datos MySQL
