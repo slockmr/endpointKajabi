@@ -1,9 +1,10 @@
 <?php
 
 // Configurar cabeceras CORS
-header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: https://cenacermexico.mykajabi.com");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
+
 
 // Conexión a la base de datos MySQL
 $servername = "sql9.freesqldatabase.com"; // Cambia esto a la dirección de tu servidor de base de datos si es diferente
