@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 }
 
 // Verificar si la solicitud es de tipo GET
-if ($_SERVER['REQUEST_METHOD'] === 'GET') { // Cambio de POST a GET
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // Obtener datos de la URL
     $nombre = $_GET['nombre'];
     $comentario = $_GET['comentario'];
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') { // Cambio de POST a GET
         die("Error en la consulta: " . $conn->error);
     }
 
-    $stmt->bind_param($nombre, $comentario);
+    $stmt->bind_param("ss", $nombre, $comentario);
 
     if ($stmt->execute() === true) {
         // El comentario se ha guardado correctamente
@@ -62,3 +62,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') { // Cambio de POST a GET
     echo json_encode(['error' => 'Método no permitido']);
 }
 ?>
+
