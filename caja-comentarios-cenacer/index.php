@@ -1,7 +1,7 @@
 <?php
 
 // Configurar cabeceras CORS
-header("Access-Control-Allow-Origin: https://cenacermexico.mykajabi.com");
+header("Access-Control-Allow-Origin: https://www.cenacermexico.com/grabaciones-evento-certificaciones");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 
