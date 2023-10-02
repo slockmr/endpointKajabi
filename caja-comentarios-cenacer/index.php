@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') { // Cambio de POST a GET
         die("Error en la consulta: " . $conn->error);
     }
 
-    $stmt->bind_param("ss", $nombre, $comentario);
+    $stmt->bind_param($nombre, $comentario);
 
     if ($stmt->execute() === true) {
         // El comentario se ha guardado correctamente
