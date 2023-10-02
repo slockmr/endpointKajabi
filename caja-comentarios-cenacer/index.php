@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $comentario = $data['comentario'];
 
     // Crear una consulta SQL para insertar el comentario en la base de datos
-    $sql = "INSERT INTO Com_cenacer_ago_clase1 (nombre, comentario) VALUES (?, ?)";
+    $sql = "INSERT INTO Com_cenacer_ago_clase1(nombre, comentario) VALUES (?, ?)";
     $stmt = $conn->prepare($sql);
 
     if ($stmt === false) {
