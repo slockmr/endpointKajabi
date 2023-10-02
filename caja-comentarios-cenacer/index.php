@@ -6,10 +6,10 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 
 // Conexión a la base de datos MySQL
-$servername = "localhost"; // Cambia esto a la dirección de tu servidor de base de datos si es diferente
-$username = "id21302362_admin"; // Cambia esto a tu nombre de usuario de la base de datos
-$password = "Cenacer1."; // Cambia esto a tu contraseña de la base de datos
-$dbname = "id21302362_cursosagosto"; // Cambia esto a tu nombre de base de datos
+$servername = "sql9.freesqldatabase.com"; // Cambia esto a la dirección de tu servidor de base de datos si es diferente
+$username = "sql9650488"; // Cambia esto a tu nombre de usuario de la base de datos
+$password = "tZz5v5KByk"; // Cambia esto a tu contraseña de la base de datos
+$dbname = "sql9650488"; // Cambia esto a tu nombre de base de datos
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $comentario = $data['comentario'];
 
     // Crear una consulta SQL para insertar el comentario en la base de datos
-    $sql = "INSERT INTO Com_CursosAgosto (nombre, comentario) VALUES (?, ?)";
+    $sql = "INSERT INTO Com_cenacer_ago_clase1 (nombre, comentario) VALUES (?, ?)";
     $stmt = $conn->prepare($sql);
 
     if ($stmt === false) {
